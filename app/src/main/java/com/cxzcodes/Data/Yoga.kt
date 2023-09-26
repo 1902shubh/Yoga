@@ -6,6 +6,7 @@ import androidx.room.PrimaryKey
 @Entity(tableName = "yoga")
 data class Yoga(
     @PrimaryKey(autoGenerate = true)
+    val id:Int,
 
     val title: String,
     val img: String,
