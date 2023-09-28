@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
+
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
@@ -16,10 +17,31 @@
         android:theme="@style/Theme.Yoga"
         tools:targetApi="31">
         <activity
-            android:name=".SplashScreen.StartScreen"
+            android:name="com.cxzcodes.activity.DayWiseActivity"
             android:exported="false" />
         <activity
             android:name=".SplashScreen.SplashScreen"
+            android:exported="false" />
+        <activity
+            android:name=".YogaActivity"
+            android:exported="false" />
+        <activity
+            android:name=".BMICalculator"
+            android:exported="false" />
+        <activity
+            android:name=".MusicActivity"
+            android:exported="false" />
+        <activity
+            android:name=".YogaDetails"
+            android:exported="false" />
+        <activity
+            android:name=".YogaList"
+            android:exported="false" />
+        <activity
+            android:name=".SplashScreen.StartScreen"
+            android:exported="false" />
+        <activity
+            android:name=".YogaDayActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

@@ -5,4 +5,7 @@
     <color name="appcolor">#ce83ce</color>
     <color name="buttoncolor">#6c1a6c</color>
     <color name="lightpurple">#d2a8d2</color>
+    <color name="textcolor">#6c286c</color>
+    <color name="textcolordark">#5b005b</color>
+    <color name="cardviewbg">#edcbee</color>
 </resources>

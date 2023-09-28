@@ -1,4 +1,21 @@
 <resources>
     <string name="app_name">Yoga</string>
     <string name="start">Start</string>
+    <string name="anya_shreniyan">अन्य श्रेणियाँ</string>
+    <string name="yogasan">योगासन</string>
+    <string name="suryanamaskar">सूर्यनमस्कार</string>
+    <string name="yogmudra">योग मुद्रा</string>
+    <string name="pranayam">प्राणायाम</string>
+    <string name="mantarjap">मंत्र जाप 108 बार</string>
+    <string name="bmicalculator">बीएमआई\n कैलकुलेटर</string>
+    <string name="title">Title</string>
+    <string name="viddhi"> विधि : </string>
+    <string name="description">Description</string>
+    <string name="labh">लाभ</string>
+    <string name="savdhani">सावधानी</string>
+    <string name="gannakaren">गणना करें</string>
+    <string name="suruaatisreni">प्रारंभिक श्रेणी</string>
+    <string name="madyavarti">मध्यवर्ती श्रेणी</string>
+    <string name="unnat">उन्नत श्रेणी</string>
+    <string name="day_name">Day Name</string>
 </resources>

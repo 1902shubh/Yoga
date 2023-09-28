@@ -2,22 +2,23 @@ package com.cxzcodes.yoga
 
 //import com.cxzcodes.DataBase.DatabaseHelper
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.util.Log.d
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.room.Room
-import androidx.sqlite.db.SimpleSQLiteQuery
 import com.cxzcodes.Data.ItemSlide
 import com.cxzcodes.Interface.YogaDao
-import com.cxzcodes.Model.ItemSlideAdapter
+import com.cxzcodes.adapter.ItemSlideAdapter
+import com.cxzcodes.Data.YogaModel
 import com.cxzcodes.RoomDB.AppDatabase
 import com.cxzcodes.helper.SQLiteDBHelper
-import com.cxzcodes.helper.Utils.suryaData
+import com.cxzcodes.helper.Utils.a_schedule
+import com.cxzcodes.helper.Utils.suryaatisatar
+import com.cxzcodes.helper.Utils.yoga
 import com.cxzcodes.yoga.databinding.ActivityMainBinding
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
 
 
 class MainActivity : AppCompatActivity() {
@@ -31,7 +32,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
         sliderecycler()
 
-//    savedatainroomdb()
+        onbtnclick()
 
         val db = Room.databaseBuilder(applicationContext, AppDatabase::class.java, "yoga.db")
             .build()
@@ -39,7 +40,54 @@ class MainActivity : AppCompatActivity() {
 
 
         getData()
+compareAndSaveMatchingTitles()
+        d("CHAGAN",a_schedule.toString())
 
+    }
+    fun compareAndSaveMatchingTitles() {
+        for (scheduleA in a_schedule) {
+            for (yoga in yoga) {
+                if (scheduleA.title == yoga.title) {
+                    // Create a YogaModel object and add it to suryaatisatar
+                    val matchingYoga = YogaModel(
+                        title = scheduleA.title,
+                        img = yoga.img,
+                        kruti = yoga.kruti,
+                        laabh = yoga.laabh,
+                        savadh = yoga.savadh,
+                        desc = yoga.desc,
+                        category = yoga.category
+                    )
+                    suryaatisatar.add(matchingYoga)
+                }
+            }
+            d("CHAGAN", suryaatisatar.toString())
+        }
+    }    private fun onbtnclick() {
+        binding.cvsurya.setOnClickListener {
+            val intent = Intent(this, YogaList::class.java)
+            intent.putExtra("surya", "1")
+            startActivity(intent)
+        }
+        binding.cvpranayam.setOnClickListener {
+            val pranayam = Intent(this, YogaList::class.java)
+            pranayam.putExtra("pranayam", "1")
+            startActivity(pranayam)
+        }
+        binding.cvmudra.setOnClickListener {
+            val intent = Intent(this, YogaList::class.java)
+            intent.putExtra("mudra", "1")
+            startActivity(intent)
+        }
+        binding.cvmusic.setOnClickListener {
+            startActivity(Intent(this, MusicActivity::class.java))
+        }
+        binding.cvyogasan.setOnClickListener {
+            startActivity(Intent(this, YogaActivity::class.java))
+        }
+        binding.cvbmi.setOnClickListener {
+            startActivity(Intent(this, BMICalculator::class.java))
+        }
 
     }
 
@@ -51,52 +99,17 @@ class MainActivity : AppCompatActivity() {
         val data = dbHelper.readDataFromSQLite()
 
 // Handle the retrieved data as needed
-        for (item in data) {
-            Log.d("SQLiteData", "Data: $item")
+//        for (item in data) {
+//            Log.d("SQLiteData", "Data: $item")
+//        }
 
-
-
-
-        }
-
-        for (item in suryaData) {
+        for (item in a_schedule) {
             Log.d("SQLiteData ", "Surya Data: $item")
 
         }
 
     }
 
-    private fun savedatainroomdb() {
-        val inputStream = this.assets.open("yog.sqlite")
-
-        try {
-            // Open the Room database and start a transaction
-            val db = Room.databaseBuilder(applicationContext, AppDatabase::class.java, "yoga.db")
-                .build()
-
-            val transactionRunner = CoroutineScope(Dispatchers.IO)
-
-            transactionRunner.launch {
-                db.beginTransaction()
-                try {
-                    while (inputStream.read() != -1) {
-                        // Read and execute SQL statements from the input stream
-                        val sqlQuery = inputStream.bufferedReader().readLine()
-                        val query = SimpleSQLiteQuery(sqlQuery)
-                        db.yogaDao().query(query)
-                    }
-                    db.setTransactionSuccessful()
-                } finally {
-                    db.endTransaction()
-                    db.close()
-                }
-            }
-        } catch (e: Exception) {
-            e.printStackTrace()
-        } finally {
-            inputStream?.close()
-        }
-    }
 
     private fun sliderecycler() {
         val items = listOf(
@@ -107,9 +120,10 @@ class MainActivity : AppCompatActivity() {
 
             )
 
-        val adapter = ItemSlideAdapter(items)
+        val adapter = ItemSlideAdapter(items,this)
         binding.recyclerviewslide.adapter = adapter
         binding.recyclerviewslide.layoutManager =
             LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+
     }
 }
