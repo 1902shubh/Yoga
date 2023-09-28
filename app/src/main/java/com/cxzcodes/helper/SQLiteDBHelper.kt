@@ -52,6 +52,7 @@ class SQLiteDBHelper(context: Context, private val dbName: String) :
             Log.e(TAG, "Error copying database from assets: ${e.message}")
         }
     }
+
     fun readDataFromSQLite(): List<YogaModel> {
         val yogaquery = "SELECT * FROM yoga"
         val suryaQuery = "SELECT * FROM surya"
@@ -89,7 +90,7 @@ class SQLiteDBHelper(context: Context, private val dbName: String) :
             Log.e(TAG, "Error reading data from SQLite database: ${e.message}")
         } finally {
             cursor?.close()
-         //   db.close()
+            //   db.close()
         }
 
 
@@ -226,6 +227,6 @@ class SQLiteDBHelper(context: Context, private val dbName: String) :
 
 
 
-        return  yoga
+        return yoga
     }
 }
