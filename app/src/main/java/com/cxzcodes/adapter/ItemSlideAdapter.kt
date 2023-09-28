@@ -1,6 +1,7 @@
-package com.cxzcodes.Model
+package com.cxzcodes.adapter
 
-import android.content.ClipData
+import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,8 +10,9 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.cxzcodes.Data.ItemSlide
 import com.cxzcodes.yoga.R
+import com.cxzcodes.yoga.YogaDayActivity
 
-class ItemSlideAdapter(private val items: List<ItemSlide>) : RecyclerView.Adapter<ItemSlideAdapter.ViewHolder>() {
+class ItemSlideAdapter(private val items: List<ItemSlide>,private val context:Context) : RecyclerView.Adapter<ItemSlideAdapter.ViewHolder>() {
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val itemImage: ImageView = itemView.findViewById(R.id.iv)
@@ -24,9 +26,10 @@ class ItemSlideAdapter(private val items: List<ItemSlide>) : RecyclerView.Adapte
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item = items[position]
-        holder.itemImage.setImageResource(item.imageResId)
+//        holder.itemImage.setImageResource(item.imageResId)
         holder.itemText.text = item.text
-    }
+        holder.itemView.setOnClickListener { context.startActivity(Intent(context,YogaDayActivity::class.java)) }
+     }
 
     override fun getItemCount(): Int {
         return items.size
