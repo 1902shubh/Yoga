@@ -2,11 +2,18 @@ package com.cxzcodes.yoga
 
 //import com.cxzcodes.DataBase.DatabaseHelper
 import android.annotation.SuppressLint
+import android.app.AlertDialog
+import android.content.Context
 import android.content.Intent
+import android.content.res.Configuration
 import android.os.Bundle
 import android.util.Log
 import android.util.Log.d
+import android.view.Menu
+import android.view.MenuItem
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.room.Room
 import com.cxzcodes.Data.ItemSlide
@@ -14,6 +21,7 @@ import com.cxzcodes.Interface.YogaDao
 import com.cxzcodes.adapter.ItemSlideAdapter
 import com.cxzcodes.Data.YogaModel
 import com.cxzcodes.RoomDB.AppDatabase
+import com.cxzcodes.bannerad.BannerAdManager
 import com.cxzcodes.helper.SQLiteDBHelper
 import com.cxzcodes.helper.Utils.a_schedule
 import com.cxzcodes.helper.Utils.suryaatisatar
@@ -38,12 +46,13 @@ class MainActivity : AppCompatActivity() {
             .build()
         yogaDao = db.yogaDao()
 
-
+        BannerAdManager.loadBannerAd(binding.adView)
+        BannerAdManager.banneradloded(this)
         getData()
-compareAndSaveMatchingTitles()
-        d("CHAGAN",a_schedule.toString())
+        compareAndSaveMatchingTitles()
 
     }
+
     fun compareAndSaveMatchingTitles() {
         for (scheduleA in a_schedule) {
             for (yoga in yoga) {
@@ -61,9 +70,27 @@ compareAndSaveMatchingTitles()
                     suryaatisatar.add(matchingYoga)
                 }
             }
-            d("CHAGAN", suryaatisatar.toString())
+//            d("CHAGAN", suryaatisatar.toString())
         }
-    }    private fun onbtnclick() {
+    }
+
+    override fun onBackPressed() {
+             val dialog = AlertDialog.Builder(this)
+            dialog.setTitle(R.string.app_name)
+            dialog.setMessage("क्या आप एप्लिकेशन को बंद करना चाहते हैं?")
+            dialog.setPositiveButton(android.R.string.yes) { _, _ ->
+                finish()
+            }
+
+            dialog.setNegativeButton(android.R.string.no) { _, _ ->
+            }
+
+            val alertDialog = dialog.create()
+            alertDialog.show()
+
+    }
+
+    private fun onbtnclick() {
         binding.cvsurya.setOnClickListener {
             val intent = Intent(this, YogaList::class.java)
             intent.putExtra("surya", "1")
@@ -88,6 +115,9 @@ compareAndSaveMatchingTitles()
         binding.cvbmi.setOnClickListener {
             startActivity(Intent(this, BMICalculator::class.java))
         }
+        binding.setting.setOnClickListener {
+            startActivity(Intent(this, SettingActivity::class.java))
+        }
 
     }
 
@@ -104,7 +134,7 @@ compareAndSaveMatchingTitles()
 //        }
 
         for (item in a_schedule) {
-            Log.d("SQLiteData ", "Surya Data: $item")
+//            Log.d("SQLiteData ", "Surya Data: $item")
 
         }
 
@@ -113,17 +143,18 @@ compareAndSaveMatchingTitles()
 
     private fun sliderecycler() {
         val items = listOf(
-            ItemSlide(R.drawable.yogawallpaper, "Item 1"),
-            ItemSlide(R.drawable.yogawallpaper, "Item 2"),
-            ItemSlide(R.drawable.yogawallpaper, "Item 3"),
+            ItemSlide(R.drawable.startingyoga, "शुरुआती स्तर"),
+            ItemSlide(R.drawable.mediumyoga, "मध्यवर्ती स्तर"),
+            ItemSlide(R.drawable.hardyoga, "उन्नत स्तर"),
 
 
             )
 
-        val adapter = ItemSlideAdapter(items,this)
+        val adapter = ItemSlideAdapter(items, this)
         binding.recyclerviewslide.adapter = adapter
         binding.recyclerviewslide.layoutManager =
             LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
 
     }
+
 }

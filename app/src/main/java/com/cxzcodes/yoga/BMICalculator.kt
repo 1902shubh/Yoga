@@ -1,5 +1,6 @@
 package com.cxzcodes.yoga
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.cxzcodes.yoga.databinding.ActivityBmicalculatorBinding
@@ -13,6 +14,9 @@ class BMICalculator : AppCompatActivity() {
         setContentView(binding.root)
         binding.calculateButton.setOnClickListener {
             calculateBMI()
+        }
+        binding.ivback.setOnClickListener {
+            startActivity(Intent(this,MainActivity::class.java))
         }
     }
 

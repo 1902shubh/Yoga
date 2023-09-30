@@ -18,4 +18,11 @@
     <string name="madyavarti">मध्यवर्ती श्रेणी</string>
     <string name="unnat">उन्नत श्रेणी</string>
     <string name="day_name">Day Name</string>
+    <string name="banner_ad">ca-app-pub-3940256099942544/6300978111</string>
+    <string name="light_mode">लाइट मोड</string>
+    <string name="share_app">ऐप्स शेयर करो।</string>
+    <string name="rate_app">रेट एप</string>
+    <string name="more_app">अधिक एप</string>
+    <string name="yes">हाँ</string>
+    <string name="no">नहीं।</string>
 </resources>

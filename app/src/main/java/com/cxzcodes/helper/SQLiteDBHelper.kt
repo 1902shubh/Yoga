@@ -1,5 +1,6 @@
 package com.cxzcodes.helper
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.database.Cursor
 import android.database.SQLException
@@ -10,6 +11,7 @@ import com.cxzcodes.Data.Schedule
 import com.cxzcodes.Data.SuryaModel
 import com.cxzcodes.Data.YogaModel
 import com.cxzcodes.helper.Utils.a_schedule
+import com.cxzcodes.helper.Utils.b_schedule
 import com.cxzcodes.helper.Utils.i_schedule
 import com.cxzcodes.helper.Utils.mudraData
 import com.cxzcodes.helper.Utils.pranayamData
@@ -53,14 +55,15 @@ class SQLiteDBHelper(context: Context, private val dbName: String) :
         }
     }
 
+    @SuppressLint("Range")
     fun readDataFromSQLite(): List<YogaModel> {
         val yogaquery = "SELECT * FROM yoga"
         val suryaQuery = "SELECT * FROM surya"
         val pranayamQuery = "SELECT * FROM pranayam"
         val mudraQuery = "SELECT * FROM mudra"
-        val i_scheduleQuery = "SELECT * FROM i_schedule"
-        val b_scheduleQuery = "SELECT * FROM b_schedule"
         val a_scheduleQuery = "SELECT * FROM a_schedule"
+        val b_scheduleQuery = "SELECT * FROM b_schedule"
+        val i_scheduleQuery = "SELECT * FROM i_schedule"
 
         val db: SQLiteDatabase = this.readableDatabase
 
@@ -174,14 +177,14 @@ class SQLiteDBHelper(context: Context, private val dbName: String) :
             cursor?.close()
 //            db.close()
         }
-        //      Get data from i_schedule table
+        //      Get data from a_schedule table
 
         try {
-            cursor = db.rawQuery(i_scheduleQuery, null)
+            cursor = db.rawQuery(a_scheduleQuery, null)
             if (cursor != null) {
                 if (cursor.moveToFirst()) {
                     do {
-                        i_schedule.add(
+                        a_schedule.add(
                             Schedule(
                                 cursor.getString(cursor.getColumnIndex("title")),
                                 cursor.getString(cursor.getColumnIndex("days"))
@@ -197,14 +200,35 @@ class SQLiteDBHelper(context: Context, private val dbName: String) :
             cursor?.close()
 //            db.close()
         }
-        //      Get data from a_schedule table
+        //      Get data from b_schedule table
 
         try {
-            cursor = db.rawQuery(a_scheduleQuery, null)
+            cursor = db.rawQuery(b_scheduleQuery, null)
             if (cursor != null) {
                 if (cursor.moveToFirst()) {
                     do {
-                        a_schedule.add(
+                        b_schedule.add(
+                            Schedule(
+                                cursor.getString(cursor.getColumnIndex("title")),
+                                cursor.getString(cursor.getColumnIndex("days"))
+
+                            )
+                        )
+                    } while (cursor.moveToNext())
+                }
+            }
+        } catch (e: SQLException) {
+            Log.e(TAG, "Error reading data from SQLite database: ${e.message}")
+        } finally {
+            cursor?.close()
+//            db.close()
+        }
+        try {
+            cursor = db.rawQuery(i_scheduleQuery, null)
+            if (cursor != null) {
+                if (cursor.moveToFirst()) {
+                    do {
+                        i_schedule.add(
                             Schedule(
                                 cursor.getString(cursor.getColumnIndex("title")),
                                 cursor.getString(cursor.getColumnIndex("days"))

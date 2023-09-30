@@ -12,7 +12,7 @@ android {
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.cxzcodes.yoga"
+        applicationId "com.papayacoders.yoga"
         minSdk 24
         targetSdk 33
         versionCode 1
@@ -56,12 +56,11 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
     implementation 'androidx.sqlite:sqlite:2.2.0'
 
-    implementation "androidx.room:room-runtime:2.5.2" // Use the latest Room version
+    implementation "androidx.room:room-runtime:2.5.2"
     kapt "androidx.room:room-compiler:2.5.2"
     implementation "androidx.room:room-ktx:2.5.2"
 
+    implementation 'com.google.android.gms:play-services-ads:22.4.0'
 
-    //    implementation "androidx.room:room-runtime:2.5.2"
-//    kapt "androidx.room:room-compiler:2.5.2"
 
 }

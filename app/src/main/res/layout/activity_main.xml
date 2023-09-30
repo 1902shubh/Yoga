@@ -5,19 +5,44 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/bgcolor"
     android:fillViewport="true"
-
     tools:context=".MainActivity">
 
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:background="@color/buttoncolor">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="पंडित डीन दयाल उपाध्याय योगा संस्थान"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="3dp"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="@color/lightpurple"/>
+
+            <ImageView
+                android:id="@+id/setting"
+                android:layout_width="38dp"
+                android:layout_height="38dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"
+                android:src="@drawable/setting" />
+        </RelativeLayout>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerviewslide"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+android:layout_margin="10dp"
             android:orientation="horizontal"
             tools:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             tools:listitem="@layout/slide_item_layout" />
@@ -30,7 +55,7 @@
             android:layout_below="@id/recyclerviewslide"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="15dp"
-            android:fontFamily="@font/aclonica"
+            android:fontFamily="@font/archivo_medium"
             android:text="@string/anya_shreniyan"
             android:textColor="@color/textcolor"
             android:textSize="22sp"
@@ -46,10 +71,10 @@
             android:orientation="horizontal">
 
             <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cvyogasan"
                 android:layout_width="170dp"
                 android:layout_height="180dp"
-                android:layout_marginRight="5dp"
-                android:id="@+id/cvyogasan"
+                android:layout_marginRight="10dp"
                 android:backgroundTint="@color/cardviewbg"
                 app:cardCornerRadius="12dp"
                 app:strokeWidth="0dp">
@@ -77,10 +102,10 @@
             </com.google.android.material.card.MaterialCardView>
 
             <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cvsurya"
                 android:layout_width="170dp"
                 android:layout_height="180dp"
-                android:id="@+id/cvsurya"
-                android:layout_marginLeft="5dp"
+                android:layout_marginLeft="10dp"
                 android:backgroundTint="@color/cardviewbg"
                 app:cardCornerRadius="12dp"
                 app:strokeWidth="0dp">
@@ -94,7 +119,7 @@
                     <ImageView
                         android:layout_width="150dp"
                         android:layout_height="150dp"
-                        android:src="@drawable/suryanamaskar" />
+                        android:src="@drawable/surya" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -119,10 +144,10 @@
             android:orientation="horizontal">
 
             <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cvmudra"
                 android:layout_width="170dp"
                 android:layout_height="180dp"
-                android:layout_marginRight="5dp"
-                android:id="@+id/cvmudra"
+                android:layout_marginRight="10dp"
                 android:backgroundTint="@color/cardviewbg"
                 app:cardCornerRadius="12dp"
                 app:strokeWidth="0dp">
@@ -150,10 +175,10 @@
             </com.google.android.material.card.MaterialCardView>
 
             <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cvpranayam"
                 android:layout_width="170dp"
                 android:layout_height="180dp"
-                android:id="@+id/cvpranayam"
-                android:layout_marginLeft="5dp"
+                android:layout_marginLeft="10dp"
                 android:backgroundTint="@color/cardviewbg"
                 app:cardCornerRadius="12dp"
                 app:strokeWidth="0dp">
@@ -180,6 +205,7 @@
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
         </LinearLayout>
+
         <LinearLayout
             android:id="@+id/lin3"
             android:layout_width="match_parent"
@@ -187,17 +213,16 @@
             android:layout_below="@id/lin2"
             android:layout_marginTop="10dp"
             android:gravity="center"
-
             android:orientation="horizontal">
 
             <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cvmusic"
                 android:layout_width="170dp"
                 android:layout_height="180dp"
-                android:layout_marginRight="5dp"
-                android:id="@+id/cvmusic"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="10dp"
                 android:backgroundTint="@color/cardviewbg"
                 app:cardCornerRadius="12dp"
-                android:layout_marginBottom="10dp"
 
                 app:strokeWidth="0dp">
 
@@ -224,10 +249,10 @@
             </com.google.android.material.card.MaterialCardView>
 
             <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cvbmi"
                 android:layout_width="170dp"
                 android:layout_height="180dp"
-                android:layout_marginLeft="5dp"
-                android:id="@+id/cvbmi"
+                android:layout_marginLeft="10dp"
                 android:layout_marginBottom="10dp"
                 android:backgroundTint="@color/cardviewbg"
                 app:cardCornerRadius="12dp"
@@ -256,6 +281,17 @@
             </com.google.android.material.card.MaterialCardView>
         </LinearLayout>
 
-    </RelativeLayout>
+        <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/adView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center_horizontal"
+            android:visibility="gone"
+
+            ads:adSize="BANNER"
+            ads:adUnitId="ca-app-pub-3940256099942544/6300978111"></com.google.android.gms.ads.AdView>
+    </LinearLayout>
 
 </ScrollView>

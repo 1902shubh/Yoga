@@ -5,9 +5,48 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".YogaDayActivity">
-<androidx.recyclerview.widget.RecyclerView
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:id="@+id/layout"
+        android:background="@color/buttoncolor">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="पंडित डीन दयाल उपाध्याय योगा संस्थान"
+            android:layout_centerVertical="true"
+            android:textSize="16sp"
+            android:layout_marginStart="11dp"
+            android:layout_marginRight="5dp"
+            android:layout_toEndOf="@+id/ivback"
+            android:textStyle="bold"
+            android:textColor="@color/lightpurple"/>
+        <ImageView
+            android:id="@+id/ivback"
+            android:layout_width="38dp"
+            android:layout_height="38dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+
+            android:src="@drawable/baseline_arrow_back_24" />
+    </RelativeLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/recyclerview"
+        android:layout_below="@id/layout"
+    android:layout_above="@id/adView"
+    android:layout_marginBottom="10dp"
+
     tools:listitem="@layout/day_layout"/>
+    <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/adView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        ads:adSize="BANNER"
+        android:layout_gravity="center_horizontal"
+        ads:adUnitId="ca-app-pub-3940256099942544/6300978111"></com.google.android.gms.ads.AdView>
 </RelativeLayout>

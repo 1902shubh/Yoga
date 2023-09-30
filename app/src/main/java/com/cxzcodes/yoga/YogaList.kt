@@ -1,24 +1,29 @@
 package com.cxzcodes.yoga
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log.d
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.cxzcodes.adapter.YogaAdapter
+import com.cxzcodes.bannerad.BannerAdManager
 import com.cxzcodes.helper.Utils.mudraData
 import com.cxzcodes.helper.Utils.pranayamData
 import com.cxzcodes.helper.Utils.suryaData
 import com.cxzcodes.yoga.databinding.ActivityYogaListBinding
 
 class YogaList : AppCompatActivity() {
-    lateinit var binding:ActivityYogaListBinding
+    lateinit var binding: ActivityYogaListBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding= ActivityYogaListBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
+        BannerAdManager.loadBannerAd(binding.adView)
+        BannerAdManager.banneradloded(this)
         fetchdata()
-
+        binding.ivback.setOnClickListener {
+            startActivity(Intent(this,MainActivity::class.java))
+        }
 //        val adapter = YogaAdapter(suryaData,this)
 //        binding.recyclerview.adapter = adapter
 //        binding.recyclerview.layoutManager =

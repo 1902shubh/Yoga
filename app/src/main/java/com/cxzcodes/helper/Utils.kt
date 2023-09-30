@@ -12,8 +12,12 @@ object Utils {
     val mudraData = mutableListOf<SuryaModel>()
 
 
-    val i_schedule = mutableListOf<Schedule>()
-    val b_schedule = mutableListOf<Schedule>()
     val a_schedule = mutableListOf<Schedule>()
+    val b_schedule = mutableListOf<Schedule>()
+    val i_schedule = mutableListOf<Schedule>()
+
+
+      val sharedPrefName = "MyAppPrefs"
+      val modeKey = "ThemeMode"
 
 }

@@ -25,9 +25,8 @@ class YogaAdapter(private val suryaList: MutableList<SuryaModel>,var context:Con
     override fun onBindViewHolder(holder: SuryaViewHolder, position: Int) {
         val suryaModel = suryaList[position]
         holder.titleTextView.text = suryaModel.title
-//        holder.krutiTextView.text = suryaModel.kruti
 
-        // Load the image based on the img string (e.g., "s1")
+
         val imgResourceId = holder.itemView.context.resources.getIdentifier(
             suryaModel.img, "drawable", holder.itemView.context.packageName
         )

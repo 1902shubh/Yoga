@@ -1,10 +1,12 @@
 package com.cxzcodes.yoga
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
 import androidx.core.content.ContextCompat
+import com.cxzcodes.bannerad.BannerAdManager
 import com.cxzcodes.yoga.databinding.ActivityYogaDetailsBinding
 
 class YogaDetails : AppCompatActivity() {
@@ -24,6 +26,11 @@ class YogaDetails : AppCompatActivity() {
             val imgDrawable = ContextCompat.getDrawable(this, imgResourceId)
             binding.ivyoga.setImageDrawable(imgDrawable)
         }
+        binding.ivback.setOnClickListener {
+            startActivity(Intent(this,MainActivity::class.java))
+        }
+        BannerAdManager.loadBannerAd(binding.adView)
+        BannerAdManager.banneradloded(this)
 binding.tvtitle.text=title.toString()
         if (kruti!="not available"){
             binding.kruti.text=kruti.toString()

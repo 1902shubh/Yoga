@@ -1,34 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="80dp"
     android:layout_marginHorizontal="15dp"
     android:layout_marginTop="15dp"
     android:backgroundTint="@color/cardviewbg"
-    app:strokeWidth="0dp"
-    android:layout_height="100dp">
-<RelativeLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
-    <ImageView
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-         android:id="@+id/ivyoga"
-        android:layout_alignParentRight="true"
-        android:layout_margin="0dp"
-        android:padding="0dp"
-        android:layout_centerVertical="true"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/aclonica"
-        android:text="@string/title"
-        android:id="@+id/tvtitle"
-        android:textColor="@color/textcolordark"
-        android:textSize="19sp"
-        android:layout_centerVertical="true"
-        android:layout_marginLeft="15dp"
-        android:textStyle="bold" />
+    app:strokeWidth="0dp">
 
-</RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/tvtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="27dp"
+            android:fontFamily="@font/aclonica"
+            android:gravity="center_vertical"
+            android:text="@string/title"
+            android:textColor="@color/textcolordark"
+            android:textSize="19sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/ivyoga"
+            android:layout_width="80dp"
+            android:layout_height="70dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dp"
+
+           />
+
+    </RelativeLayout>
 </com.google.android.material.card.MaterialCardView>

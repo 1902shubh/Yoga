@@ -7,10 +7,13 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
+import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.cxzcodes.activity.DayWiseActivity
 import com.cxzcodes.yoga.R
 import com.cxzcodes.yoga.YogaDayActivity
+import com.google.android.material.card.MaterialCardView
 
 class DayAdapter(val context: Context, val type: Int) :
     RecyclerView.Adapter<DayAdapter.DayViewHolder>() {
@@ -57,10 +60,15 @@ class DayAdapter(val context: Context, val type: Int) :
         holder.bind(position)
 
         holder.itemView.setOnClickListener {
-            val inte = Intent(context, DayWiseActivity::class.java)
-            inte.putExtra("type", type)
-            inte.putExtra("day", position)
-            context.startActivity(inte)
+
+            if ((position + 1) % 4 == 0) {
+                 Toast.makeText(context, "आज विश्राम कीजिये", Toast.LENGTH_SHORT).show()
+            }else{
+                val inte = Intent(context, DayWiseActivity::class.java)
+                inte.putExtra("type", type)
+                inte.putExtra("day", position)
+                context.startActivity(inte)
+            }
         }
     }
 
@@ -78,7 +86,7 @@ class DayAdapter(val context: Context, val type: Int) :
             if ((position + 1) % 4 == 0) {
                 dayImageView.visibility = View.VISIBLE
                 dayNameTextView.visibility = View.GONE
-                dayImageView.setImageResource(R.drawable.yogawallpaper)
+                dayImageView.setImageResource(R.drawable.restday)
             } else {
                 dayImageView.visibility = View.GONE
                 dayNameTextView.visibility = View.VISIBLE

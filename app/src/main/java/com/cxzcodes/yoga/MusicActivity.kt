@@ -1,9 +1,11 @@
 package com.cxzcodes.yoga
 
+import android.content.Intent
 import android.media.MediaPlayer
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import com.cxzcodes.bannerad.BannerAdManager
 import com.cxzcodes.yoga.databinding.ActivityMusicBinding
 
 class MusicActivity : AppCompatActivity() {
@@ -19,10 +21,15 @@ class MusicActivity : AppCompatActivity() {
         binding = ActivityMusicBinding.inflate(layoutInflater)
         setContentView(binding.root)
         updateTrackInfo()
+        BannerAdManager.loadBannerAd(binding.adView)
+        BannerAdManager.banneradloded(this)
         mediaPlayer = MediaPlayer.create(this, audioFiles[currentTrackIndex])
         if (mediaPlayer.isPlaying) {
             binding.btnpausee.visibility = View.VISIBLE
             binding.btnplay.visibility = View.GONE
+        }
+        binding.ivback.setOnClickListener {
+            startActivity(Intent(this,MainActivity::class.java))
         }
         binding.btnplay.setOnClickListener {
             playAudio()
