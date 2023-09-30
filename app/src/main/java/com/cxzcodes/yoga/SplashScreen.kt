@@ -1,4 +1,4 @@
-package com.cxzcodes.yoga.SplashScreen
+package com.cxzcodes.yoga
 
 import android.content.Context
 import android.content.Intent
@@ -8,8 +8,6 @@ import android.os.Handler
 import androidx.appcompat.app.AppCompatDelegate
 import com.cxzcodes.helper.Utils.modeKey
 import com.cxzcodes.helper.Utils.sharedPrefName
-import com.cxzcodes.yoga.MainActivity
-import com.cxzcodes.yoga.R
 
 class SplashScreen : AppCompatActivity() {
 

@@ -29,7 +29,7 @@ class YogaDayActivity : AppCompatActivity() {
         val layoutManager = GridLayoutManager(this, 3)
 
         binding.ivback.setOnClickListener {
-            startActivity(Intent(this,MainActivity::class.java))
+            finish()
         }
         recyclerView.layoutManager = layoutManager
 

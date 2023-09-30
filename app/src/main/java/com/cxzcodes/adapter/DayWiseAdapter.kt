@@ -7,7 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.cxzcodes.Data.Schedule
@@ -25,32 +24,34 @@ class DayWiseAdapter(private val itemlist: MutableList<Schedule>, val context: C
     }
 
     override fun onBindViewHolder(holder: DayViewHolder, position: Int) {
-        val currenttitle=itemlist[position].title
+
+        val currenttitle = itemlist[position].title
         holder.dayNameTextView.text = currenttitle
         for (yogaModel in yoga) {
             if (currenttitle == yogaModel.title) {
-                val imageid=yogaModel.img
+                val imageid = yogaModel.img
                 val imgResourceId = holder.itemView.context.resources.getIdentifier(
                     imageid, "drawable", holder.itemView.context.packageName
                 )
                 val imgDrawable = ContextCompat.getDrawable(holder.itemView.context, imgResourceId)
                 holder.ivyoga.setImageDrawable(imgDrawable)
-             }
+            }
         }
         holder.itemView.setOnClickListener {
             for (yogaModel in yoga) {
                 if (currenttitle == yogaModel.title) {
-                     val intent= Intent(context,YogaDetails::class.java)
-                    intent.putExtra("title",yogaModel.title)
-                    intent.putExtra("image",yogaModel.img)
-                    intent.putExtra("desc",yogaModel.desc)
-                    intent.putExtra("kruti",yogaModel.kruti)
-                    intent.putExtra("laabh",yogaModel.laabh)
-                    intent.putExtra("savadh",yogaModel.savadh)
+                    val intent = Intent(context, YogaDetails::class.java)
+                    intent.putExtra("title", yogaModel.title)
+                    intent.putExtra("image", yogaModel.img)
+                    intent.putExtra("desc", yogaModel.desc)
+                    intent.putExtra("kruti", yogaModel.kruti)
+                    intent.putExtra("laabh", yogaModel.laabh)
+                    intent.putExtra("savadh", yogaModel.savadh)
                     context.startActivity(intent)
                     break
                 }
-            }           }
+            }
+        }
     }
 
     override fun getItemCount(): Int {

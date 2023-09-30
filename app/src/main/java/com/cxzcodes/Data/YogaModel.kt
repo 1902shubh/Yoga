@@ -7,5 +7,5 @@ data class YogaModel(
     val laabh: String,
     val savadh: String,
     val desc: String,
-    val category: String = ""
+    val category: String = "",
 )
