@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <array name="preloaded_fonts" translatable="false">
-        <item>@font/aclonica</item>
+    <array name="preloaded_fonts">
+        <item>@font/roboto</item>
         <item>@font/amarante</item>
-        <item>@font/archivo_medium</item>
+        <item>@font/roboto</item>
         <item>@font/audiowide</item>
         <item>@font/candal</item>
+        <item>@font/roboto</item>
         <item>@font/russo_one</item>
     </array>
 </resources>

@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.cxzcodes.adapter.DayAdapter
 import com.cxzcodes.adapter.DayAdapterTC
 import com.cxzcodes.bannerad.BannerAdManager
+import com.cxzcodes.helper.Utils
 import com.cxzcodes.helper.Utils.a_schedule
 import com.cxzcodes.yoga.databinding.ActivityYogaBinding
 import com.cxzcodes.yoga.databinding.ActivityYogaDayBinding
@@ -20,6 +21,8 @@ class YogaDayActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityYogaDayBinding.inflate(layoutInflater)
+        Utils.loadLocale(this)
+
         setContentView(binding.root)
 
         BannerAdManager.loadBannerAd(binding.adView)

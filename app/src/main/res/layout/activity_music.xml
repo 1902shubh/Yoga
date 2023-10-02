@@ -19,7 +19,7 @@
             android:layout_marginStart="11dp"
             android:layout_marginRight="5dp"
             android:layout_toEndOf="@+id/ivback"
-            android:text="पंडित डीन दयाल उपाध्याय योगा संस्थान"
+            android:text="@string/navbar_title"
             android:textColor="@color/lightpurple"
             android:textSize="16sp"
             android:textStyle="bold" />
@@ -67,7 +67,7 @@
                 android:layout_below="@id/cv"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="15dp"
-                android:fontFamily="@font/aclonica"
+                android:fontFamily="@font/roboto"
                 android:text="@string/anya_shreniyan"
                 android:textColor="@color/textcolor"
                 android:textSize="22sp"
@@ -125,6 +125,8 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         ads:adSize="BANNER"
+        android:visibility="gone"
+
         android:layout_gravity="center_horizontal"
         ads:adUnitId="ca-app-pub-3940256099942544/6300978111"></com.google.android.gms.ads.AdView>
 </RelativeLayout>

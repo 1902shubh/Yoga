@@ -32,6 +32,7 @@ class ItemSlideAdapter(private val items: List<ItemSlide>, private val context: 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item = items[position]
         holder.itemImage.setImageResource(item.imageResId)
+
         holder.itemText.text = item.text
         holder.itemView.setOnClickListener {
 

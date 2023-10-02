@@ -6,6 +6,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import com.cxzcodes.bannerad.BannerAdManager
+import com.cxzcodes.helper.SQLiteDBHelper
+import com.cxzcodes.helper.Utils
 import com.cxzcodes.yoga.databinding.ActivityMusicBinding
 
 class MusicActivity : AppCompatActivity() {
@@ -19,18 +21,22 @@ class MusicActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMusicBinding.inflate(layoutInflater)
+        Utils.loadLocale(this)
+
         setContentView(binding.root)
         updateTrackInfo()
         BannerAdManager.loadBannerAd(binding.adView)
         BannerAdManager.banneradloded(this)
+
+
         mediaPlayer = MediaPlayer.create(this, audioFiles[currentTrackIndex])
         if (mediaPlayer.isPlaying) {
             binding.btnpausee.visibility = View.VISIBLE
             binding.btnplay.visibility = View.GONE
         }
         binding.ivback.setOnClickListener {
-            startActivity(Intent(this,MainActivity::class.java))
-        }
+            finish()
+         }
         binding.btnplay.setOnClickListener {
             playAudio()
             binding.btnpausee.visibility = View.VISIBLE

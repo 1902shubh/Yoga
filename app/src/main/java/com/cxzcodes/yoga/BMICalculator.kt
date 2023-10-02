@@ -3,6 +3,7 @@ package com.cxzcodes.yoga
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.cxzcodes.helper.Utils
 import com.cxzcodes.yoga.databinding.ActivityBmicalculatorBinding
 import kotlin.math.pow
 
@@ -11,13 +12,14 @@ class BMICalculator : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityBmicalculatorBinding.inflate(layoutInflater)
+        Utils.loadLocale(this)
+
         setContentView(binding.root)
         binding.calculateButton.setOnClickListener {
             calculateBMI()
         }
         binding.ivback.setOnClickListener {
-            startActivity(Intent(this,MainActivity::class.java))
-        }
+finish()        }
     }
 
     private fun calculateBMI() {
@@ -33,9 +35,8 @@ class BMICalculator : AppCompatActivity() {
         val heightInCm = heightText.toDouble()
 
          val heightInMeters = heightInCm / 100.0
-
-        val bmi = weight / heightInMeters.pow(2)
-        val bmiText = String.format("आपका बीएमआई:: %.2f", bmi)
+         val bmi = weight / heightInMeters.pow(2)
+        val bmiText = String.format("BMI:: %.2f", bmi)
         binding.resultTextView.text = bmiText
     }
 }

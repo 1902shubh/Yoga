@@ -26,13 +26,15 @@ class SQLiteDBHelper(context: Context, private val dbName: String) :
     private val TAG = SQLiteDBHelper::class.java.simpleName
 
     companion object {
-        private const val DB_NAME = "yog.sqlite"
+        const val DB_NAME = "yog.sqlite"
         private const val DB_VERSION = 1
     }
 
     override fun onCreate(db: SQLiteDatabase?) {}
 
     override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {}
+
+
     fun copyDatabaseFromAssets(context: Context) {
         val inputFileName = "yog.sqlite"
         val outputFilePath = context.getDatabasePath(DB_NAME)
@@ -43,8 +45,8 @@ class SQLiteDBHelper(context: Context, private val dbName: String) :
 
             val buffer = ByteArray(1024)
             var length: Int
-            while ((inputStream.read(buffer)) > 0) {
-                outputStream.write(buffer)
+            while (inputStream.read(buffer).also { length = it } > 0) {
+                outputStream.write(buffer, 0, length)
             }
 
             outputStream.flush()
@@ -84,6 +86,12 @@ class SQLiteDBHelper(context: Context, private val dbName: String) :
                                 cursor.getString(cursor.getColumnIndex("savadh")),
                                 cursor.getString(cursor.getColumnIndex("desc")),
                                 cursor.getString(cursor.getColumnIndex("category")),
+                                cursor.getString(cursor.getColumnIndex("titleEng")),
+                                cursor.getString(cursor.getColumnIndex("krutii")),
+                                cursor.getString(cursor.getColumnIndex("laabhEng")),
+                                cursor.getString(cursor.getColumnIndex("savadhEng")),
+                                cursor.getString(cursor.getColumnIndex("descEng")),
+
                             )
                         )
                     } while (cursor.moveToNext())
@@ -112,7 +120,12 @@ class SQLiteDBHelper(context: Context, private val dbName: String) :
                                 cursor.getString(cursor.getColumnIndex("kruti")),
                                 cursor.getString(cursor.getColumnIndex("laabh")),
                                 cursor.getString(cursor.getColumnIndex("savadh")),
-                                cursor.getString(cursor.getColumnIndex("desc"))
+                                cursor.getString(cursor.getColumnIndex("desc")),
+                                cursor.getString(cursor.getColumnIndex("titleEng")),
+                                cursor.getString(cursor.getColumnIndex("krutii")),
+                                cursor.getString(cursor.getColumnIndex("laabhEng")),
+                                cursor.getString(cursor.getColumnIndex("savadhEng")),
+                                cursor.getString(cursor.getColumnIndex("descEng")),
                             )
                         )
                     } while (cursor.moveToNext())
@@ -139,7 +152,13 @@ class SQLiteDBHelper(context: Context, private val dbName: String) :
                                 cursor.getString(cursor.getColumnIndex("kruti")),
                                 cursor.getString(cursor.getColumnIndex("laabh")),
                                 cursor.getString(cursor.getColumnIndex("savadh")),
-                                cursor.getString(cursor.getColumnIndex("desc"))
+                                cursor.getString(cursor.getColumnIndex("desc")),
+                                cursor.getString(cursor.getColumnIndex("titleEng")),
+                                cursor.getString(cursor.getColumnIndex("krutii")),
+                                cursor.getString(cursor.getColumnIndex("laabhEng")),
+                                cursor.getString(cursor.getColumnIndex("savadhEng")),
+                                cursor.getString(cursor.getColumnIndex("descEng")),
+
                             )
                         )
                     } while (cursor.moveToNext())
@@ -165,8 +184,13 @@ class SQLiteDBHelper(context: Context, private val dbName: String) :
                                 cursor.getString(cursor.getColumnIndex("kruti")),
                                 cursor.getString(cursor.getColumnIndex("laabh")),
                                 cursor.getString(cursor.getColumnIndex("savadh")),
-                                cursor.getString(cursor.getColumnIndex("desc"))
-                            )
+                                cursor.getString(cursor.getColumnIndex("desc")),
+                                cursor.getString(cursor.getColumnIndex("titleEng")),
+                                cursor.getString(cursor.getColumnIndex("krutii")),
+                                cursor.getString(cursor.getColumnIndex("laabhEng")),
+                                cursor.getString(cursor.getColumnIndex("savadhEng")),
+                                cursor.getString(cursor.getColumnIndex("descEng")),
+                             )
                         )
                     } while (cursor.moveToNext())
                 }
@@ -187,7 +211,8 @@ class SQLiteDBHelper(context: Context, private val dbName: String) :
                         a_schedule.add(
                             Schedule(
                                 cursor.getString(cursor.getColumnIndex("title")),
-                                cursor.getString(cursor.getColumnIndex("days"))
+                                cursor.getString(cursor.getColumnIndex("days")),
+                                        cursor.getString(cursor.getColumnIndex("titleEng"))
 
                             )
                         )
@@ -210,7 +235,8 @@ class SQLiteDBHelper(context: Context, private val dbName: String) :
                         b_schedule.add(
                             Schedule(
                                 cursor.getString(cursor.getColumnIndex("title")),
-                                cursor.getString(cursor.getColumnIndex("days"))
+                                cursor.getString(cursor.getColumnIndex("days")),
+                                        cursor.getString(cursor.getColumnIndex("titleEng"))
 
                             )
                         )
@@ -230,8 +256,10 @@ class SQLiteDBHelper(context: Context, private val dbName: String) :
                     do {
                         i_schedule.add(
                             Schedule(
+
                                 cursor.getString(cursor.getColumnIndex("title")),
-                                cursor.getString(cursor.getColumnIndex("days"))
+                                cursor.getString(cursor.getColumnIndex("days")),
+                                        cursor.getString(cursor.getColumnIndex("titleEng"))
 
                             )
                         )

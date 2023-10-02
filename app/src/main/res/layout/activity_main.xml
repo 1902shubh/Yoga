@@ -21,7 +21,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="पंडित डीन दयाल उपाध्याय योगा संस्थान"
+                android:text="@string/navbar_title"
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="3dp"
                 android:textSize="16sp"
@@ -55,7 +55,7 @@ android:layout_margin="10dp"
             android:layout_below="@id/recyclerviewslide"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="15dp"
-            android:fontFamily="@font/archivo_medium"
+            android:fontFamily="@font/roboto"
             android:text="@string/anya_shreniyan"
             android:textColor="@color/textcolor"
             android:textSize="22sp"
@@ -93,10 +93,10 @@ android:layout_margin="10dp"
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/aclonica"
+                        android:fontFamily="@font/roboto"
                         android:text="@string/yogasan"
                         android:textColor="@color/textcolordark"
-                        android:textSize="19sp"
+                        android:textSize="16sp"
                         android:textStyle="bold" />
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
@@ -124,10 +124,10 @@ android:layout_margin="10dp"
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/aclonica"
+                        android:fontFamily="@font/roboto"
                         android:text="@string/suryanamaskar"
                         android:textColor="@color/textcolordark"
-                        android:textSize="19sp"
+                        android:textSize="16sp"
                         android:textStyle="bold" />
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
@@ -166,10 +166,10 @@ android:layout_margin="10dp"
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/aclonica"
+                        android:fontFamily="@font/roboto"
                         android:text="@string/yogmudra"
                         android:textColor="@color/textcolordark"
-                        android:textSize="19sp"
+                        android:textSize="16sp"
                         android:textStyle="bold" />
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
@@ -197,10 +197,10 @@ android:layout_margin="10dp"
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/aclonica"
+                        android:fontFamily="@font/roboto"
                         android:text="@string/pranayam"
                         android:textColor="@color/textcolordark"
-                        android:textSize="19sp"
+                        android:textSize="16sp"
                         android:textStyle="bold" />
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
@@ -229,21 +229,22 @@ android:layout_margin="10dp"
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:gravity="center_horizontal"
+                    android:gravity="center"
                     android:orientation="vertical">
 
                     <ImageView
-                        android:layout_width="150dp"
-                        android:layout_height="150dp"
+                        android:layout_width="140dp"
+                        android:layout_height="140dp"
                         android:src="@drawable/om" />
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/aclonica"
+                        android:fontFamily="@font/roboto"
                         android:text="@string/mantarjap"
+                        android:textAlignment="center"
                         android:textColor="@color/textcolordark"
-                        android:textSize="19sp"
+                        android:textSize="14sp"
                         android:textStyle="bold" />
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
@@ -261,21 +262,22 @@ android:layout_margin="10dp"
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:gravity="center_horizontal"
+                     android:gravity="center"
                     android:orientation="vertical">
 
                     <ImageView
-                        android:layout_width="150dp"
-                        android:layout_height="130dp"
-                        android:src="@drawable/bmicalculator" />
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:src="@drawable/bmii" />
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/aclonica"
+                        android:fontFamily="@font/roboto"
                         android:text="@string/bmicalculator"
+                        android:textAlignment="center"
                         android:textColor="@color/textcolordark"
-                        android:textSize="17sp"
+                        android:textSize="14sp"
                         android:textStyle="bold" />
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>

@@ -7,6 +7,7 @@ import android.util.Log.d
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.cxzcodes.adapter.YogaAdapter
 import com.cxzcodes.bannerad.BannerAdManager
+import com.cxzcodes.helper.Utils
 import com.cxzcodes.helper.Utils.mudraData
 import com.cxzcodes.helper.Utils.pranayamData
 import com.cxzcodes.helper.Utils.suryaData
@@ -17,13 +18,14 @@ class YogaList : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding= ActivityYogaListBinding.inflate(layoutInflater)
+        Utils.loadLocale(this)
+
         setContentView(binding.root)
         BannerAdManager.loadBannerAd(binding.adView)
         BannerAdManager.banneradloded(this)
         fetchdata()
         binding.ivback.setOnClickListener {
-            startActivity(Intent(this,MainActivity::class.java))
-        }
+            finish()        }
 //        val adapter = YogaAdapter(suryaData,this)
 //        binding.recyclerview.adapter = adapter
 //        binding.recyclerview.layoutManager =

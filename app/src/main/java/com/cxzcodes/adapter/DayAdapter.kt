@@ -1,5 +1,6 @@
 package com.cxzcodes.adapter
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
 import android.view.LayoutInflater
@@ -11,6 +12,8 @@ import android.widget.Toast
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.cxzcodes.activity.DayWiseActivity
+import com.cxzcodes.helper.Utils
+import com.cxzcodes.helper.Utils.language
 import com.cxzcodes.yoga.R
 import com.cxzcodes.yoga.YogaDayActivity
 import com.google.android.material.card.MaterialCardView
@@ -34,21 +37,38 @@ class DayAdapter(val context: Context, val type: Int) :
         "तेरहवां दिन",
         "चौदहवां दिन",
         "पंद्रहवां दिन",
-        "सोलहवां दिन",
-        "सत्रहवां दिन",
-        "अठारहवां दिन",
-        "उन्नीसवां दिन",
-        "बीसवां दिन",
-        "इक्कीसवां दिन",
-        "बाईसवां दिन",
-        "तेईसवां दिन",
-        "चौबीसवां दिन",
-        "पच्चीसवां दिन",
-        "छब्बीसवां दिन",
-        "सत्ताईसवां दिन",
-        "अट्ठासीसवां दिन",
-        "उनतीसवां दिन",
-        "तीसवां दिन"
+//        "सोलहवां दिन",
+//        "सत्रहवां दिन",
+//        "अठारहवां दिन",
+//        "उन्नीसवां दिन",
+//        "बीसवां दिन",
+//        "इक्कीसवां दिन",
+//        "बाईसवां दिन",
+//        "तेईसवां दिन",
+//        "चौबीसवां दिन",
+//        "पच्चीसवां दिन",
+//        "छब्बीसवां दिन",
+//        "सत्ताईसवां दिन",
+//        "अट्ठासीसवां दिन",
+//        "उनतीसवां दिन",
+//        "तीसवां दिन"
+    )
+    private val dayNamesInEnglish = listOf(
+        "First Day",
+        "Second day",
+        "Third day",
+        "Fourth Day",
+        "Fifth Day",
+        "Sixth Day",
+        "Seventh Day",
+        "Eighth Day",
+        "Ninth day",
+        "tenth day",
+        "Eleventh Day",
+        "Twelfth Day",
+        "Thirteenth Day",
+        "Fourteenth day",
+        "Fifteenth day",
     )
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DayViewHolder {
@@ -62,7 +82,13 @@ class DayAdapter(val context: Context, val type: Int) :
         holder.itemView.setOnClickListener {
 
             if ((position + 1) % 4 == 0) {
-                 Toast.makeText(context, "आज विश्राम कीजिये", Toast.LENGTH_SHORT).show()
+                if (language=="hindi"){
+
+                    Toast.makeText(context, "आज विश्राम कीजिये", Toast.LENGTH_SHORT).show()
+                }else{
+                    Toast.makeText(context, "Today Rest", Toast.LENGTH_SHORT).show()
+
+                }
             }else{
                 val inte = Intent(context, DayWiseActivity::class.java)
                 inte.putExtra("type", type)
@@ -80,8 +106,19 @@ class DayAdapter(val context: Context, val type: Int) :
         private val dayNameTextView: TextView = itemView.findViewById(R.id.dayNameTextView)
         private val dayImageView: ImageView = itemView.findViewById(R.id.dayImageView)
 
+        @SuppressLint("SuspiciousIndentation")
         fun bind(position: Int) {
+            for (i in dayNamesInHindi[position])
             dayNameTextView.text = dayNamesInHindi[position]
+
+
+            if (Utils.language=="hindi"){
+                dayNameTextView.text = dayNamesInHindi[position]
+
+            }else{
+                dayNameTextView.text = dayNamesInEnglish[position]
+
+            }
 
             if ((position + 1) % 4 == 0) {
                 dayImageView.visibility = View.VISIBLE

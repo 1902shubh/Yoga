@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Yoga</string>
+    <string name="start">Start</string>
+    <string name="anya_shreniyan">अन्य श्रेणियाँ</string>
+    <string name="yogasan">योगासन</string>
+    <string name="suryanamaskar">सूर्यनमस्कार</string>
+    <string name="yogmudra">योग मुद्रा</string>
+    <string name="pranayam">प्राणायाम</string>
+    <string name="mantarjap">मंत्र जाप\n 108 बार</string>
+    <string name="bmicalculator">बीएमआई\n कैलकुलेटर</string>
+    <string name="title">Title</string>
+    <string name="viddhi">विधि</string>
+    <string name="description">Description</string>
+    <string name="labh">लाभ</string>
+    <string name="savdhani">सावधानी</string>
+    <string name="gannakaren">गणना करें</string>
+    <string name="suruaatisreni">प्रारंभिक श्रेणी</string>
+    <string name="madyavarti">मध्यवर्ती श्रेण</string>
+    <string name="unnat">उन्नत श्रेणी</string>
+    <string name="day_name">Day Name</string>
+    <string name="banner_ad">ca-app-pub-3940256099942544/6300978111</string>
+    <string name="light_mode">लाइट मोड</string>
+    <string name="share_app">ऐप्स शेयर करो।</string>
+    <string name="rate_app">रेट एप</string>
+    <string name="more_app">अधिक एप</string>
+    <string name="yes">हाँ</string>
+    <string name="no">नहीं</string>
+    <string name="change_newLanguageCode">भाषा बदलें</string>
+    <string name="dark_mode">डार्क मोड</string>
+    <string name="dark_dialog">डार्क मोड को चालू और बंद करने के लिए UI रीस्टार्ट की आवश्यकता होती है। क्या आप जारी रखना चाहते हैं?</string>
+    <string name="navbar_title">पंडित दीनदयाल उपाध्याय योग संस्थान</string>
+    <string name="close_dialog">क्या आप एप्लिकेशन को बंद करना चाहते हैं?</string>
+    <string name="today_rest">आज विश्राम कीजिये</string>
+    <string name="enter_weight">वजन दर्ज करें (kg)</string>
+    <string name="enter_height">ऊँचाई दर्ज करें (cm)Enter height (cm)</string>
+    <string name="your_bmi">आपका बीएमआई:</string>
+
+
+</resources>

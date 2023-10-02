@@ -11,6 +11,7 @@ import android.widget.Toast
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.cxzcodes.activity.DayWiseActivity
+import com.cxzcodes.helper.Utils.language
 import com.cxzcodes.yoga.R
 import com.cxzcodes.yoga.YogaDayActivity
 import com.google.android.material.card.MaterialCardView
@@ -34,23 +35,26 @@ class DayAdapterTC(val context: Context, val type: Int) :
         "तेरहवां दिन",
         "चौदहवां दिन",
         "पंद्रहवां दिन",
-        "सोलहवां दिन",
-        "सत्रहवां दिन",
-        "अठारहवां दिन",
-        "उन्नीसवां दिन",
-        "बीसवां दिन",
-        "इक्कीसवां दिन",
-        "बाईसवां दिन",
-        "तेईसवां दिन",
-        "चौबीसवां दिन",
-        "पच्चीसवां दिन",
-        "छब्बीसवां दिन",
-        "सत्ताईसवां दिन",
-        "अट्ठासीसवां दिन",
-        "उनतीसवां दिन",
-        "तीसवां दिन"
-    )
 
+    )
+    private val dayNamesInEnglish = listOf(
+        "First Day",
+        "second day",
+        "day 3",
+        "Fourth Day",
+        "Fifth Day",
+        "Sixth Day",
+        "Seventh Day",
+        "Eighth Day",
+        "ninth day",
+        "tenth day",
+        "Eleventh Day",
+        "Twelfth Day",
+        "Thirteenth Day",
+        "fourteenth day",
+        "fifteenth day",
+
+        )
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DayViewHolder {
         val view = LayoutInflater.from(context).inflate(R.layout.day_layout, parent, false)
         return DayViewHolder(view)
@@ -62,7 +66,7 @@ class DayAdapterTC(val context: Context, val type: Int) :
         holder.itemView.setOnClickListener {
 
             if ((position + 1) % 3 == 0) {
-                 Toast.makeText(context, "आज विश्राम कीजिये", Toast.LENGTH_SHORT).show()
+                 Toast.makeText(context, R.string.today_rest, Toast.LENGTH_SHORT).show()
             }else{
                 val inte = Intent(context, DayWiseActivity::class.java)
                 inte.putExtra("type", type)
@@ -81,7 +85,13 @@ class DayAdapterTC(val context: Context, val type: Int) :
         private val dayImageView: ImageView = itemView.findViewById(R.id.dayImageView)
 
         fun bind(position: Int) {
-            dayNameTextView.text = dayNamesInHindi[position]
+            if (language=="hindi"){
+                dayNameTextView.text = dayNamesInHindi[position]
+
+            }else{
+                dayNameTextView.text = dayNamesInEnglish[position]
+
+            }
 
             if ((position + 1) % 3 == 0) {
                 dayImageView.visibility = View.VISIBLE

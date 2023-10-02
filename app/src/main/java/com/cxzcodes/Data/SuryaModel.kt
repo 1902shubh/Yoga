@@ -6,5 +6,10 @@ data class SuryaModel(
     val kruti: String,
     val laabh: String,
     val savadh: String,
-    val desc: String
+    val desc: String,
+    val titleEng: String,
+    val krutii: String,
+    val laabhEng: String,
+    val savadhEng: String,
+    val descEng: String,
 )

@@ -2,6 +2,7 @@ package com.cxzcodes.adapter
 
 import android.content.Context
 import android.content.Intent
+import android.util.Log.d
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,6 +11,7 @@ import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.cxzcodes.Data.SuryaModel
+import com.cxzcodes.helper.Utils
 import com.cxzcodes.yoga.R
 import com.cxzcodes.yoga.YogaDetails
 
@@ -24,7 +26,14 @@ class YogaAdapter(private val suryaList: MutableList<SuryaModel>,var context:Con
 
     override fun onBindViewHolder(holder: SuryaViewHolder, position: Int) {
         val suryaModel = suryaList[position]
-        holder.titleTextView.text = suryaModel.title
+        if (Utils.language=="hindi"){
+            holder.titleTextView.text = suryaModel.title
+
+        }else{
+
+            holder.titleTextView.text = suryaModel.titleEng
+
+        }
 
 
         val imgResourceId = holder.itemView.context.resources.getIdentifier(
@@ -33,14 +42,33 @@ class YogaAdapter(private val suryaList: MutableList<SuryaModel>,var context:Con
         val imgDrawable = ContextCompat.getDrawable(holder.itemView.context, imgResourceId)
         holder.imageView.setImageDrawable(imgDrawable)
         holder.itemView.setOnClickListener {
-val intent=Intent(context,YogaDetails::class.java)
-            intent.putExtra("title",suryaModel.title)
-            intent.putExtra("image",suryaModel.img)
-            intent.putExtra("desc",suryaModel.desc)
-            intent.putExtra("kruti",suryaModel.kruti)
-            intent.putExtra("laabh",suryaModel.laabh)
-            intent.putExtra("savadh",suryaModel.savadh)
-            context.startActivity(intent)
+            if (Utils.language=="hindi"){
+                val intent=Intent(context,YogaDetails::class.java)
+                intent.putExtra("title",suryaModel.title)
+                intent.putExtra("image",suryaModel.img)
+                intent.putExtra("desc",suryaModel.desc)
+                intent.putExtra("kruti",suryaModel.kruti)
+                intent.putExtra("laabh",suryaModel.laabh)
+                intent.putExtra("savadh",suryaModel.savadh)
+                intent.putExtra("viddhi","िधि :")
+                intent.putExtra("labh","लाभ")
+                intent.putExtra("savdhani","सावधानी")
+                context.startActivity(intent)
+            }else{
+                val intent=Intent(context,YogaDetails::class.java)
+                intent.putExtra("title",suryaModel.titleEng)
+                intent.putExtra("image",suryaModel.img)
+                intent.putExtra("desc",suryaModel.descEng)
+                intent.putExtra("kruti",suryaModel.krutii)
+                intent.putExtra("laabh",suryaModel.laabhEng)
+                intent.putExtra("savadh",suryaModel.savadhEng)
+                intent.putExtra("viddhi","Method")
+                intent.putExtra("labh","Profit")
+                intent.putExtra("savdhani","Careful")
+                d("CHAGAN",suryaModel.descEng)
+                context.startActivity(intent)
+            }
+
           }
     }
 
