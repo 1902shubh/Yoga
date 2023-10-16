@@ -35,26 +35,34 @@ class DayAdapterTC(val context: Context, val type: Int) :
         "तेरहवां दिन",
         "चौदहवां दिन",
         "पंद्रहवां दिन",
+        "सोलहवां दिन",
+        "सत्रहवां दिन",
+        "अठारहवां दिन",
 
-    )
+
+        )
     private val dayNamesInEnglish = listOf(
         "First Day",
-        "second day",
-        "day 3",
+        "Second day",
+        "Day 3",
         "Fourth Day",
         "Fifth Day",
         "Sixth Day",
         "Seventh Day",
         "Eighth Day",
-        "ninth day",
-        "tenth day",
+        "Ninth day",
+        "Tenth day",
         "Eleventh Day",
         "Twelfth Day",
         "Thirteenth Day",
-        "fourteenth day",
-        "fifteenth day",
+        "Fourteenth day",
+        "Fifteenth day",
+        "Sixteenth day",
+        "Seventeenth day",
+        "Eightteenth day",
 
         )
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DayViewHolder {
         val view = LayoutInflater.from(context).inflate(R.layout.day_layout, parent, false)
         return DayViewHolder(view)
@@ -66,8 +74,8 @@ class DayAdapterTC(val context: Context, val type: Int) :
         holder.itemView.setOnClickListener {
 
             if ((position + 1) % 3 == 0) {
-                 Toast.makeText(context, R.string.today_rest, Toast.LENGTH_SHORT).show()
-            }else{
+                Toast.makeText(context, R.string.today_rest, Toast.LENGTH_SHORT).show()
+            } else {
                 val inte = Intent(context, DayWiseActivity::class.java)
                 inte.putExtra("type", type)
                 inte.putExtra("day", position)
@@ -85,10 +93,10 @@ class DayAdapterTC(val context: Context, val type: Int) :
         private val dayImageView: ImageView = itemView.findViewById(R.id.dayImageView)
 
         fun bind(position: Int) {
-            if (language=="hindi"){
+            if (language == "hindi") {
                 dayNameTextView.text = dayNamesInHindi[position]
 
-            }else{
+            } else {
                 dayNameTextView.text = dayNamesInEnglish[position]
 
             }

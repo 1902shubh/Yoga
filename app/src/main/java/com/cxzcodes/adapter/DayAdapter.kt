@@ -37,9 +37,9 @@ class DayAdapter(val context: Context, val type: Int) :
         "तेरहवां दिन",
         "चौदहवां दिन",
         "पंद्रहवां दिन",
-//        "सोलहवां दिन",
-//        "सत्रहवां दिन",
-//        "अठारहवां दिन",
+        "सोलहवां दिन",
+        "सत्रहवां दिन",
+        "अठारहवां दिन",
 //        "उन्नीसवां दिन",
 //        "बीसवां दिन",
 //        "इक्कीसवां दिन",
@@ -69,6 +69,9 @@ class DayAdapter(val context: Context, val type: Int) :
         "Thirteenth Day",
         "Fourteenth day",
         "Fifteenth day",
+        "Sixteenth day",
+        "Seventeenth day",
+        "Eightteenth day",
     )
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DayViewHolder {
