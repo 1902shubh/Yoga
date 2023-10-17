@@ -45,14 +45,14 @@ d("DATA",list.toString())
     private fun getList(day: Int, type: Int) {
 
         var tempList = mutableListOf<Schedule>()
-        for (data in b_schedule) {
-
-            if (data.days == "d1" || data.days == "d2") {
-                tempList.add(data)
-                d("DATA",data.days)
-
-            }
-        }
+//        for (data in b_schedule) {
+//
+//            if (data.days == "d1" || data.days == "d2") {
+//                tempList.add(data)
+//                d("DATA",data.days)
+//
+//            }
+//        }
         list = when (type) {
             0 -> {
 
@@ -90,7 +90,7 @@ d("DATA",list.toString())
 
                     3 -> {
                         for (data in b_schedule) {
-                            if (data.days == "d7" || data.days == "d7") {
+                            if (data.days == "d7" || data.days == "d8") {
                                 tempList.add(data)
                             }
                         }
@@ -150,82 +150,82 @@ d("DATA",list.toString())
                         }
                         tempList
                     }
-//
-//                    10 -> {
-//                        for (data in b_schedule) {
-//                            if (data.days == "d11") {
-//                                tempList.add(data)
-//                            }
-//                        }
-//                        tempList
-//                    }
-//
-//                    11 -> {
-//                        for (data in b_schedule) {
-//                            if (data.days == "d12") {
-//                                tempList.add(data)
-//                            }
-//                        }
-//                        tempList
-//                    }
-//
-//                    12 -> {
-//                        for (data in b_schedule) {
-//                            if (data.days == "d13") {
-//                                tempList.add(data)
-//                            }
-//                        }
-//                        tempList
-//                    }
-//
-//                    13 -> {
-//                        for (data in b_schedule) {
-//                            if (data.days == "d14") {
-//                                tempList.add(data)
-//                            }
-//                        }
-//                        tempList
-//                    }
-//
-//                    14 -> {
-//                        for (data in b_schedule) {
-//                            if (data.days == "d16") {
-//                                tempList.add(data)
-//                            }
-//                        }
-//                        tempList
-//                    }
-//
-//                    15 -> {
-//                        for (data in b_schedule) {
-//                            if (data.days == "d16") {
-//                                tempList.add(data)
-//                            }
-//                        }
-//                        tempList
-//                    }
-//
-//                    16 -> {
-//                        for (data in b_schedule) {
-//                            if (data.days == "d17") {
-//                                tempList.add(data)
-//                            }
-//                        }
-//                        tempList
-//                    }
-//
-//                    17 -> {
-//                        for (data in b_schedule) {
-//                            if (data.days == "d18") {
-//                                tempList.add(data)
-//                            }
-//                        }
-//                        tempList
-//                    }
-//
+
+                    10 -> {
+                        for (data in b_schedule) {
+                            if (data.days == "d21"||data.days == "d22") {
+                                tempList.add(data)
+                            }
+                        }
+                        tempList
+                    }
+
+                    11 -> {
+                        for (data in b_schedule) {
+                            if (data.days == "d23"||data.days == "d24") {
+                                tempList.add(data)
+                            }
+                        }
+                        tempList
+                    }
+
+                    12 -> {
+                        for (data in b_schedule) {
+                            if (data.days == "d25"||data.days == "d26") {
+                                tempList.add(data)
+                            }
+                        }
+                        tempList
+                    }
+
+                    13 -> {
+                        for (data in b_schedule) {
+                            if (data.days == "d27"||data.days == "d28") {
+                                tempList.add(data)
+                            }
+                        }
+                        tempList
+                    }
+
+                    14 -> {
+                        for (data in b_schedule) {
+                            if (data.days == "d29"||data.days == "d00") {
+                                tempList.add(data)
+                            }
+                        }
+                        tempList
+                    }
+
+                    15 -> {
+                        for (data in b_schedule) {
+                            if (data.days == "d1"||data.days == "d2") {
+                                tempList.add(data)
+                            }
+                        }
+                        tempList
+                    }
+
+                    16 -> {
+                        for (data in b_schedule) {
+                            if (data.days == "d3"||data.days == "d4") {
+                                tempList.add(data)
+                            }
+                        }
+                        tempList
+                    }
+
+                    17 -> {
+                        for (data in b_schedule) {
+                            if (data.days == "d5"||data.days == "d6") {
+                                tempList.add(data)
+                            }
+                        }
+                        tempList
+                    }
+
 //                    18 -> {
 //                        for (data in b_schedule) {
-//                            if (data.days == "d19") {
+//                            if (data.days == "d19"|| data.days == "d20") {
 //                                tempList.add(data)
 //                            }
 //                        }
@@ -420,78 +420,78 @@ d("DATA",list.toString())
                         }
                         tempList
                     }
-//
-//                    10 -> {
-//                        for (data in i_schedule) {
-//                            if (data.days == "d11") {
-//                                tempList.add(data)
-//                            }
-//                        }
-//                        tempList
-//                    }
-//
-//                    11 -> {
-//                        for (data in i_schedule) {
-//                            if (data.days == "d12") {
-//                                tempList.add(data)
-//                            }
-//                        }
-//                        tempList
-//                    }
-//
-//                    12 -> {
-//                        for (data in i_schedule) {
-//                            if (data.days == "d13") {
-//                                tempList.add(data)
-//                            }
-//                        }
-//                        tempList
-//                    }
-//
-//                    13 -> {
-//                        for (data in i_schedule) {
-//                            if (data.days == "d14") {
-//                                tempList.add(data)
-//                            }
-//                        }
-//                        tempList
-//                    }
-//
-//                    14 -> {
-//                        for (data in i_schedule) {
-//                            if (data.days == "d16") {
-//                                tempList.add(data)
-//                            }
-//                        }
-//                        tempList
-//                    }
-//
-//                    15 -> {
-//                        for (data in i_schedule) {
-//                            if (data.days == "d16") {
-//                                tempList.add(data)
-//                            }
-//                        }
-//                        tempList
-//                    }
-//
-//                    16 -> {
-//                        for (data in i_schedule) {
-//                            if (data.days == "d17") {
-//                                tempList.add(data)
-//                            }
-//                        }
-//                        tempList
-//                    }
-//
-//                    17 -> {
-//                        for (data in i_schedule) {
-//                            if (data.days == "d18") {
-//                                tempList.add(data)
-//                            }
-//                        }
-//                        tempList
-//                    }
+
+                    10 -> {
+                        for (data in i_schedule) {
+                            if (data.days == "d21"||data.days == "d22") {
+                                tempList.add(data)
+                            }
+                        }
+                        tempList
+                    }
+
+                    11 -> {
+                        for (data in i_schedule) {
+                            if (data.days == "d23"||data.days == "d24") {
+                                tempList.add(data)
+                            }
+                        }
+                        tempList
+                    }
+
+                    12 -> {
+                        for (data in i_schedule) {
+                            if (data.days == "d25"||data.days == "d26") {
+                                tempList.add(data)
+                            }
+                        }
+                        tempList
+                    }
+
+                    13 -> {
+                        for (data in i_schedule) {
+                            if (data.days == "d27"||data.days == "d28") {
+                                tempList.add(data)
+                            }
+                        }
+                        tempList
+                    }
+
+                    14 -> {
+                        for (data in i_schedule) {
+                            if (data.days == "d29"||data.days == "d00") {
+                                tempList.add(data)
+                            }
+                        }
+                        tempList
+                    }
+
+                    15 -> {
+                        for (data in i_schedule) {
+                            if (data.days == "d1"||data.days == "d2") {
+                                tempList.add(data)
+                            }
+                        }
+                        tempList
+                    }
+
+                    16 -> {
+                        for (data in i_schedule) {
+                            if (data.days == "d3"||data.days == "d4") {
+                                tempList.add(data)
+                            }
+                        }
+                        tempList
+                    }
+
+                    17 -> {
+                        for (data in i_schedule) {
+                            if (data.days == "d5"||data.days == "d6") {
+                                tempList.add(data)
+                            }
+                        }
+                        tempList
+                    }
 //
 //                    18 -> {
 //                        for (data in i_schedule) {
@@ -697,77 +697,77 @@ d("DATA",list.toString())
                         }
                         tempList
                     }
-//                    10 -> {
-//                        for (data in Utils.a_schedule) {
-//                            if (data.days == "d11") {
-//                                tempList.add(data)
-//                            }
-//                        }
-//                        tempList
-//                    }
-//
-//                    11 -> {
-//                        for (data in Utils.a_schedule) {
-//                            if (data.days == "d12") {
-//                                tempList.add(data)
-//                            }
-//                        }
-//                        tempList
-//                    }
-//
-//                    12 -> {
-//                        for (data in Utils.a_schedule) {
-//                            if (data.days == "d13") {
-//                                tempList.add(data)
-//                            }
-//                        }
-//                        tempList
-//                    }
-//
-//                    13 -> {
-//                        for (data in Utils.a_schedule) {
-//                            if (data.days == "d14") {
-//                                tempList.add(data)
-//                            }
-//                        }
-//                        tempList
-//                    }
-//
-//                    14 -> {
-//                        for (data in Utils.a_schedule) {
-//                            if (data.days == "d16") {
-//                                tempList.add(data)
-//                            }
-//                        }
-//                        tempList
-//                    }
-//
-//                    15 -> {
-//                        for (data in Utils.a_schedule) {
-//                            if (data.days == "d16") {
-//                                tempList.add(data)
-//                            }
-//                        }
-//                        tempList
-//                    }
-//
-//                    16 -> {
-//                        for (data in Utils.a_schedule) {
-//                            if (data.days == "d17") {
-//                                tempList.add(data)
-//                            }
-//                        }
-//                        tempList
-//                    }
-//
-//                    17 -> {
-//                        for (data in Utils.a_schedule) {
-//                            if (data.days == "d18") {
-//                                tempList.add(data)
-//                            }
-//                        }
-//                        tempList
-//                    }
+                    10 -> {
+                        for (data in a_schedule) {
+                            if (data.days == "d21"||data.days == "d22") {
+                                tempList.add(data)
+                            }
+                        }
+                        tempList
+                    }
+
+                    11 -> {
+                        for (data in a_schedule) {
+                            if (data.days == "d23"||data.days == "d24") {
+                                tempList.add(data)
+                            }
+                        }
+                        tempList
+                    }
+
+                    12 -> {
+                        for (data in a_schedule) {
+                            if (data.days == "d25"||data.days == "d26") {
+                                tempList.add(data)
+                            }
+                        }
+                        tempList
+                    }
+
+                    13 -> {
+                        for (data in a_schedule) {
+                            if (data.days == "d27"||data.days == "d28") {
+                                tempList.add(data)
+                            }
+                        }
+                        tempList
+                    }
+
+                    14 -> {
+                        for (data in a_schedule) {
+                            if (data.days == "d29"||data.days == "d00") {
+                                tempList.add(data)
+                            }
+                        }
+                        tempList
+                    }
+
+                    15 -> {
+                        for (data in a_schedule) {
+                            if (data.days == "d1"||data.days == "d2") {
+                                tempList.add(data)
+                            }
+                        }
+                        tempList
+                    }
+
+                    16 -> {
+                        for (data in a_schedule) {
+                            if (data.days == "d3"||data.days == "d4") {
+                                tempList.add(data)
+                            }
+                        }
+                        tempList
+                    }
+
+                    17 -> {
+                        for (data in a_schedule) {
+                            if (data.days == "d5"||data.days == "d6") {
+                                tempList.add(data)
+                            }
+                        }
+                        tempList
+                    }
 //
 //                    18 -> {
 //                        for (data in Utils.a_schedule) {

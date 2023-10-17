@@ -83,21 +83,24 @@ class DayAdapter(val context: Context, val type: Int) :
         holder.bind(position)
 
         holder.itemView.setOnClickListener {
-
-            if ((position + 1) % 4 == 0) {
-                if (language=="hindi"){
-
-                    Toast.makeText(context, "आज विश्राम कीजिये", Toast.LENGTH_SHORT).show()
-                }else{
-                    Toast.makeText(context, "Today Rest", Toast.LENGTH_SHORT).show()
-
-                }
-            }else{
-                val inte = Intent(context, DayWiseActivity::class.java)
-                inte.putExtra("type", type)
-                inte.putExtra("day", position)
-                context.startActivity(inte)
-            }
+            val inte = Intent(context, DayWiseActivity::class.java)
+            inte.putExtra("type", type)
+            inte.putExtra("day", position)
+            context.startActivity(inte)
+//            if ((position + 1) % 4 == 0) {
+//                if (language=="hindi"){
+//
+//                    Toast.makeText(context, "आज विश्राम कीजिये", Toast.LENGTH_SHORT).show()
+//                }else{
+//                    Toast.makeText(context, "Today Rest", Toast.LENGTH_SHORT).show()
+//
+//                }
+//            }else{
+//                val inte = Intent(context, DayWiseActivity::class.java)
+//                inte.putExtra("type", type)
+//                inte.putExtra("day", position)
+//                context.startActivity(inte)
+//            }
         }
     }
 
@@ -123,15 +126,18 @@ class DayAdapter(val context: Context, val type: Int) :
 
             }
 
-            if ((position + 1) % 4 == 0) {
-                dayImageView.visibility = View.VISIBLE
-                dayNameTextView.visibility = View.GONE
-                dayImageView.setImageResource(R.drawable.restday)
-            } else {
-                dayImageView.visibility = View.GONE
-                dayNameTextView.visibility = View.VISIBLE
+            dayImageView.visibility = View.GONE
+            dayNameTextView.visibility = View.VISIBLE
 
-            }
+//            if ((position + 1) % 4 == 0) {
+//                dayImageView.visibility = View.VISIBLE
+//                dayNameTextView.visibility = View.GONE
+//                dayImageView.setImageResource(R.drawable.restday)
+//            } else {
+//                dayImageView.visibility = View.GONE
+//                dayNameTextView.visibility = View.VISIBLE
+//
+//            }
         }
     }
 }

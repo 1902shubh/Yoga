@@ -72,15 +72,19 @@ class DayAdapterTC(val context: Context, val type: Int) :
         holder.bind(position)
 
         holder.itemView.setOnClickListener {
+            val inte = Intent(context, DayWiseActivity::class.java)
+            inte.putExtra("type", type)
+            inte.putExtra("day", position)
+            context.startActivity(inte)
 
-            if ((position + 1) % 3 == 0) {
-                Toast.makeText(context, R.string.today_rest, Toast.LENGTH_SHORT).show()
-            } else {
-                val inte = Intent(context, DayWiseActivity::class.java)
-                inte.putExtra("type", type)
-                inte.putExtra("day", position)
-                context.startActivity(inte)
-            }
+//            if ((position + 1) % 3 == 0) {
+//                Toast.makeText(context, R.string.today_rest, Toast.LENGTH_SHORT).show()
+//            } else {
+//                val inte = Intent(context, DayWiseActivity::class.java)
+//                inte.putExtra("type", type)
+//                inte.putExtra("day", position)
+//                context.startActivity(inte)
+//            }
         }
     }
 
@@ -100,16 +104,17 @@ class DayAdapterTC(val context: Context, val type: Int) :
                 dayNameTextView.text = dayNamesInEnglish[position]
 
             }
-
-            if ((position + 1) % 3 == 0) {
-                dayImageView.visibility = View.VISIBLE
-                dayNameTextView.visibility = View.GONE
-                dayImageView.setImageResource(R.drawable.restday)
-            } else {
-                dayImageView.visibility = View.GONE
-                dayNameTextView.visibility = View.VISIBLE
-
-            }
+            dayImageView.visibility = View.GONE
+            dayNameTextView.visibility = View.VISIBLE
+//            if ((position + 1) % 3 == 0) {
+//                dayImageView.visibility = View.VISIBLE
+//                dayNameTextView.visibility = View.GONE
+//                dayImageView.setImageResource(R.drawable.restday)
+//            } else {
+//                dayImageView.visibility = View.GONE
+//                dayNameTextView.visibility = View.VISIBLE
+//
+//            }
         }
     }
 }
