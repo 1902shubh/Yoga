@@ -21,6 +21,7 @@ import com.cxzcodes.helper.Utils
 import com.cxzcodes.helper.Utils.loadLocale
 import com.cxzcodes.helper.Utils.newLanguageCode_PREF_KEY
 import com.cxzcodes.helper.Utils.modeKey
+import com.cxzcodes.helper.Utils.saveLancodeToSharedPreferences
 import com.cxzcodes.helper.Utils.setLocale
 import com.cxzcodes.helper.Utils.sharedPrefName
 import com.cxzcodes.yoga.databinding.ActivitySettingBinding
@@ -142,6 +143,7 @@ class SettingActivity : AppCompatActivity() {
                 saveSelectednewLanguageCode(newnewLanguageCodeCode)
                 setLocale(newnewLanguageCodeCode,this)
                 recreateApp()
+                saveLancodeToSharedPreferences(this,newnewLanguageCodeCode)
             })
 
         dialog.create()

@@ -48,4 +48,14 @@ object Utils {
         val language = shared.getString("app_lang", "")
         setLocale(language.toString(), context)
     }
+
+
+    fun saveLancodeToSharedPreferences(context: Context, value: String) {
+        val sharedPreferences: SharedPreferences = context.getSharedPreferences(sharedPrefName, Context.MODE_PRIVATE)
+        val editor = sharedPreferences.edit()
+        editor.putString(newLanguageCode_PREF_KEY, value)
+        editor.apply()
+         lancode = value
+    }
+ 
 }

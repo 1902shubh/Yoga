@@ -13,6 +13,7 @@ import com.cxzcodes.helper.Utils.loadLocale
 import com.cxzcodes.helper.Utils.modeKey
 import com.cxzcodes.helper.Utils.sharedPrefName
 
+
 class SplashScreen : AppCompatActivity() {
 
 
@@ -28,13 +29,14 @@ loadLocale(this)
             startActivity(intent)
             finish()
         }, 1200)
-
- if (lancode=="hi")
+if (language==""){
+    language="english"
+}else if (lancode=="hi")
  {
      language="hindi"
  }else{
      language="english"
 
  }
-     }
+      }
 }

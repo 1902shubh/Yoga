@@ -59,7 +59,7 @@ d("DATA",list.toString())
                 when (day) {
                     0 -> {
                         for (data in b_schedule) {
-                            if (data.days == "d1" || data.days == "d2") {
+                            if (data.days == "d1"  ) {
                                 tempList.add(data)
                                 d("DATA",data.days)
 
@@ -71,7 +71,7 @@ d("DATA",list.toString())
                     1 -> {
                         for (data in b_schedule) {
 
-                            if (data.days == "d3" || data.days == "d4") {
+                            if (data.days == "d2" ) {
                                 tempList.add(data)
 
                             }
@@ -81,7 +81,7 @@ d("DATA",list.toString())
 
                     2 -> {
                         for (data in b_schedule) {
-                            if (data.days == "d5" || data.days == "d6") {
+                            if (data.days == "d3"  ) {
                                 tempList.add(data)
                             }
                         }
@@ -90,7 +90,7 @@ d("DATA",list.toString())
 
                     3 -> {
                         for (data in b_schedule) {
-                            if (data.days == "d7" || data.days == "d8") {
+                            if (data.days == "d5"  ) {
                                 tempList.add(data)
                             }
                         }
@@ -99,7 +99,7 @@ d("DATA",list.toString())
 
                     4 -> {
                         for (data in b_schedule) {
-                            if (data.days == "d9" || data.days == "d10") {
+                            if (data.days == "d6" ) {
                                 tempList.add(data)
                             }
                         }
@@ -108,7 +108,7 @@ d("DATA",list.toString())
 
                     5 -> {
                         for (data in b_schedule) {
-                            if (data.days == "d11" || data.days == "d12") {
+                            if (data.days == "d7"  ) {
                                 tempList.add(data)
                             }
                         }
@@ -117,7 +117,7 @@ d("DATA",list.toString())
 
                     6 -> {
                         for (data in b_schedule) {
-                            if (data.days == "d13" || data.days == "d14") {
+                            if (data.days == "d9"  ) {
                                 tempList.add(data)
                             }
                         }
@@ -126,7 +126,7 @@ d("DATA",list.toString())
 
                     7 -> {
                         for (data in b_schedule) {
-                            if (data.days == "d15"||data.days == "d16"  ) {
+                            if (data.days == "d10" ) {
                                 tempList.add(data)
                             }
                         }
@@ -135,7 +135,7 @@ d("DATA",list.toString())
 
                     8 -> {
                         for (data in b_schedule) {
-                            if (data.days == "d17"||data.days == "d18") {
+                            if (data.days == "d11" ) {
                                 tempList.add(data)
                             }
                         }
@@ -144,7 +144,7 @@ d("DATA",list.toString())
 
                     9 -> {
                         for (data in b_schedule) {
-                            if (data.days == "d19"||data.days == "d20") {
+                            if (data.days == "d13" ) {
                                 tempList.add(data)
                             }
                         }
@@ -153,7 +153,7 @@ d("DATA",list.toString())
 
                     10 -> {
                         for (data in b_schedule) {
-                            if (data.days == "d21"||data.days == "d22") {
+                            if (data.days == "d14" ) {
                                 tempList.add(data)
                             }
                         }
@@ -162,7 +162,7 @@ d("DATA",list.toString())
 
                     11 -> {
                         for (data in b_schedule) {
-                            if (data.days == "d23"||data.days == "d24") {
+                            if (data.days == "d15"||data.days == "d16") {
                                 tempList.add(data)
                             }
                         }
@@ -171,7 +171,7 @@ d("DATA",list.toString())
 
                     12 -> {
                         for (data in b_schedule) {
-                            if (data.days == "d25"||data.days == "d26") {
+                            if (data.days == "d17"||data.days == "d18") {
                                 tempList.add(data)
                             }
                         }
@@ -180,7 +180,7 @@ d("DATA",list.toString())
 
                     13 -> {
                         for (data in b_schedule) {
-                            if (data.days == "d27"||data.days == "d28") {
+                            if (data.days == "d19"||data.days == "d20") {
                                 tempList.add(data)
                             }
                         }
@@ -189,7 +189,7 @@ d("DATA",list.toString())
 
                     14 -> {
                         for (data in b_schedule) {
-                            if (data.days == "d29"||data.days == "d00") {
+                            if (data.days == "d21"||data.days == "d22") {
                                 tempList.add(data)
                             }
                         }
@@ -198,7 +198,7 @@ d("DATA",list.toString())
 
                     15 -> {
                         for (data in b_schedule) {
-                            if (data.days == "d1"||data.days == "d2") {
+                            if (data.days == "d23"||data.days == "d24") {
                                 tempList.add(data)
                             }
                         }
@@ -207,21 +207,21 @@ d("DATA",list.toString())
 
                     16 -> {
                         for (data in b_schedule) {
-                            if (data.days == "d3"||data.days == "d4") {
+                            if (data.days == "d25"||data.days == "d26") {
                                 tempList.add(data)
                             }
                         }
                         tempList
                     }
 
-                    17 -> {
-                        for (data in b_schedule) {
-                            if (data.days == "d5"||data.days == "d6") {
-                                tempList.add(data)
-                            }
-                        }
-                        tempList
-                    }
+//                    17 -> {
+//                        for (data in b_schedule) {
+//                            if (data.days == "27"||data.days == "d28") {
+//                                tempList.add(data)
+//                            }
+//                        }
+//                        tempList
+//                    }
 
 //                    18 -> {
 //                        for (data in b_schedule) {
@@ -315,7 +315,7 @@ d("DATA",list.toString())
 //
                     else -> {
                         for (data in b_schedule) {
-                            if (data.days == "d20") {
+                            if (data.days == "d27"||data.days == "d28") {
                                 tempList.add(data)
                             }
                         }
@@ -330,10 +330,9 @@ d("DATA",list.toString())
                 when (day) {
                     0 -> {
                         for (data in i_schedule) {
-
-                            if (data.days == "d1" || data.days == "d2") {
+                            if (data.days == "d1"  ) {
                                 tempList.add(data)
-                                d("DATA",data.toString())
+                                d("DATA",data.days)
 
                             }
                         }
@@ -342,8 +341,10 @@ d("DATA",list.toString())
 
                     1 -> {
                         for (data in i_schedule) {
-                            if (data.days == "d3" || data.days == "d4") {
+
+                            if (data.days == "d2" ) {
                                 tempList.add(data)
+
                             }
                         }
                         tempList
@@ -351,7 +352,7 @@ d("DATA",list.toString())
 
                     2 -> {
                         for (data in i_schedule) {
-                            if (data.days == "d5" || data.days == "d6") {
+                            if (data.days == "d3"  ) {
                                 tempList.add(data)
                             }
                         }
@@ -360,7 +361,7 @@ d("DATA",list.toString())
 
                     3 -> {
                         for (data in i_schedule) {
-                            if (data.days == "d7" || data.days == "d8") {
+                            if (data.days == "d5"  ) {
                                 tempList.add(data)
                             }
                         }
@@ -369,7 +370,7 @@ d("DATA",list.toString())
 
                     4 -> {
                         for (data in i_schedule) {
-                            if (data.days == "d9" || data.days == "d10") {
+                            if (data.days == "d6" ) {
                                 tempList.add(data)
                             }
                         }
@@ -378,7 +379,7 @@ d("DATA",list.toString())
 
                     5 -> {
                         for (data in i_schedule) {
-                            if (data.days == "d11" || data.days == "d12") {
+                            if (data.days == "d7"  ) {
                                 tempList.add(data)
                             }
                         }
@@ -387,7 +388,7 @@ d("DATA",list.toString())
 
                     6 -> {
                         for (data in i_schedule) {
-                            if (data.days == "d13" || data.days == "d14") {
+                            if (data.days == "d9"  ) {
                                 tempList.add(data)
                             }
                         }
@@ -396,7 +397,7 @@ d("DATA",list.toString())
 
                     7 -> {
                         for (data in i_schedule) {
-                            if (data.days == "d15"||data.days == "d16"  ) {
+                            if (data.days == "d10" ) {
                                 tempList.add(data)
                             }
                         }
@@ -405,7 +406,7 @@ d("DATA",list.toString())
 
                     8 -> {
                         for (data in i_schedule) {
-                            if (data.days == "d17"||data.days == "d18") {
+                            if (data.days == "d11" ) {
                                 tempList.add(data)
                             }
                         }
@@ -414,7 +415,7 @@ d("DATA",list.toString())
 
                     9 -> {
                         for (data in i_schedule) {
-                            if (data.days == "d19"||data.days == "d20") {
+                            if (data.days == "d13" ) {
                                 tempList.add(data)
                             }
                         }
@@ -423,7 +424,7 @@ d("DATA",list.toString())
 
                     10 -> {
                         for (data in i_schedule) {
-                            if (data.days == "d21"||data.days == "d22") {
+                            if (data.days == "d14" ) {
                                 tempList.add(data)
                             }
                         }
@@ -432,7 +433,7 @@ d("DATA",list.toString())
 
                     11 -> {
                         for (data in i_schedule) {
-                            if (data.days == "d23"||data.days == "d24") {
+                            if (data.days == "d15"||data.days == "d16") {
                                 tempList.add(data)
                             }
                         }
@@ -441,7 +442,7 @@ d("DATA",list.toString())
 
                     12 -> {
                         for (data in i_schedule) {
-                            if (data.days == "d25"||data.days == "d26") {
+                            if (data.days == "d17"||data.days == "d18") {
                                 tempList.add(data)
                             }
                         }
@@ -450,7 +451,7 @@ d("DATA",list.toString())
 
                     13 -> {
                         for (data in i_schedule) {
-                            if (data.days == "d27"||data.days == "d28") {
+                            if (data.days == "d19"||data.days == "d20") {
                                 tempList.add(data)
                             }
                         }
@@ -459,7 +460,7 @@ d("DATA",list.toString())
 
                     14 -> {
                         for (data in i_schedule) {
-                            if (data.days == "d29"||data.days == "d00") {
+                            if (data.days == "d21"||data.days == "d22") {
                                 tempList.add(data)
                             }
                         }
@@ -468,7 +469,7 @@ d("DATA",list.toString())
 
                     15 -> {
                         for (data in i_schedule) {
-                            if (data.days == "d1"||data.days == "d2") {
+                            if (data.days == "d23"||data.days == "d24") {
                                 tempList.add(data)
                             }
                         }
@@ -477,21 +478,21 @@ d("DATA",list.toString())
 
                     16 -> {
                         for (data in i_schedule) {
-                            if (data.days == "d3"||data.days == "d4") {
+                            if (data.days == "d25"||data.days == "d26") {
                                 tempList.add(data)
                             }
                         }
                         tempList
                     }
 
-                    17 -> {
-                        for (data in i_schedule) {
-                            if (data.days == "d5"||data.days == "d6") {
-                                tempList.add(data)
-                            }
-                        }
-                        tempList
-                    }
+//                    17 -> {
+//                        for (data in i_schedule) {
+//                            if (data.days == "27"||data.days == "d28") {
+//                                tempList.add(data)
+//                            }
+//                        }
+//                        tempList
+//                    }
 //
 //                    18 -> {
 //                        for (data in i_schedule) {
@@ -594,8 +595,8 @@ d("DATA",list.toString())
 
 
                     else -> {
-                        for (data in b_schedule) {
-                            if (data.days == "d20") {
+                        for (data in i_schedule) {
+                            if (data.days == "d27"||data.days == "d28") {
                                 tempList.add(data)
                             }
                         }
@@ -609,26 +610,30 @@ d("DATA",list.toString())
             else -> {
                 when (day) {
                     0 -> {
-                        for (data in Utils.a_schedule) {
-                            if (data.days == "d1" || data.days == "d2") {
+                        for (data in a_schedule) {
+                            if (data.days == "d1"  ) {
                                 tempList.add(data)
+                                d("DATA",data.days)
+
                             }
                         }
                         tempList
                     }
 
                     1 -> {
-                        for (data in Utils.a_schedule) {
-                            if (data.days == "d3" || data.days == "d4") {
+                        for (data in a_schedule) {
+
+                            if (data.days == "d2" ) {
                                 tempList.add(data)
+
                             }
                         }
                         tempList
                     }
 
                     2 -> {
-                        for (data in Utils.a_schedule) {
-                            if (data.days == "d5" || data.days == "d6") {
+                        for (data in a_schedule) {
+                            if (data.days == "d4"  ) {
                                 tempList.add(data)
                             }
                         }
@@ -636,8 +641,8 @@ d("DATA",list.toString())
                     }
 
                     3 -> {
-                        for (data in Utils.a_schedule) {
-                            if (data.days == "d7" || data.days == "d8") {
+                        for (data in a_schedule) {
+                            if (data.days == "d5"  ) {
                                 tempList.add(data)
                             }
                         }
@@ -645,8 +650,8 @@ d("DATA",list.toString())
                     }
 
                     4 -> {
-                        for (data in Utils.a_schedule) {
-                            if (data.days == "d9" || data.days == "d10") {
+                        for (data in a_schedule) {
+                            if (data.days == "d7" ) {
                                 tempList.add(data)
                             }
                         }
@@ -654,8 +659,8 @@ d("DATA",list.toString())
                     }
 
                     5 -> {
-                        for (data in Utils.a_schedule) {
-                            if (data.days == "d11" || data.days == "d12") {
+                        for (data in a_schedule) {
+                            if (data.days == "d8"  ) {
                                 tempList.add(data)
                             }
                         }
@@ -663,8 +668,8 @@ d("DATA",list.toString())
                     }
 
                     6 -> {
-                        for (data in Utils.a_schedule) {
-                            if (data.days == "d13" || data.days == "d14") {
+                        for (data in a_schedule) {
+                            if (data.days == "d10"  ) {
                                 tempList.add(data)
                             }
                         }
@@ -673,7 +678,7 @@ d("DATA",list.toString())
 
                     7 -> {
                         for (data in a_schedule) {
-                            if (data.days == "d15"||data.days == "d16"  ) {
+                            if (data.days == "d11" ) {
                                 tempList.add(data)
                             }
                         }
@@ -682,7 +687,7 @@ d("DATA",list.toString())
 
                     8 -> {
                         for (data in a_schedule) {
-                            if (data.days == "d17"||data.days == "d18") {
+                            if (data.days == "d13" ) {
                                 tempList.add(data)
                             }
                         }
@@ -691,15 +696,16 @@ d("DATA",list.toString())
 
                     9 -> {
                         for (data in a_schedule) {
-                            if (data.days == "d19"||data.days == "d20") {
+                            if (data.days == "d14" ) {
                                 tempList.add(data)
                             }
                         }
                         tempList
                     }
+
                     10 -> {
                         for (data in a_schedule) {
-                            if (data.days == "d21"||data.days == "d22") {
+                            if (data.days == "d16" ) {
                                 tempList.add(data)
                             }
                         }
@@ -708,7 +714,7 @@ d("DATA",list.toString())
 
                     11 -> {
                         for (data in a_schedule) {
-                            if (data.days == "d23"||data.days == "d24") {
+                            if (data.days == "d17"||data.days == "d18") {
                                 tempList.add(data)
                             }
                         }
@@ -717,7 +723,7 @@ d("DATA",list.toString())
 
                     12 -> {
                         for (data in a_schedule) {
-                            if (data.days == "d25"||data.days == "d26") {
+                            if (data.days == "d19"||data.days == "d20") {
                                 tempList.add(data)
                             }
                         }
@@ -726,7 +732,7 @@ d("DATA",list.toString())
 
                     13 -> {
                         for (data in a_schedule) {
-                            if (data.days == "d27"||data.days == "d28") {
+                            if (data.days == "d21"||data.days == "d22") {
                                 tempList.add(data)
                             }
                         }
@@ -735,7 +741,7 @@ d("DATA",list.toString())
 
                     14 -> {
                         for (data in a_schedule) {
-                            if (data.days == "d29"||data.days == "d00") {
+                            if (data.days == "d23"||data.days == "d24") {
                                 tempList.add(data)
                             }
                         }
@@ -744,7 +750,7 @@ d("DATA",list.toString())
 
                     15 -> {
                         for (data in a_schedule) {
-                            if (data.days == "d1"||data.days == "d2") {
+                            if (data.days == "d25"||data.days == "d26") {
                                 tempList.add(data)
                             }
                         }
@@ -753,21 +759,21 @@ d("DATA",list.toString())
 
                     16 -> {
                         for (data in a_schedule) {
-                            if (data.days == "d3"||data.days == "d4") {
+                            if (data.days == "d27"||data.days == "d28") {
                                 tempList.add(data)
                             }
                         }
                         tempList
                     }
 
-                    17 -> {
-                        for (data in a_schedule) {
-                            if (data.days == "d5"||data.days == "d6") {
-                                tempList.add(data)
-                            }
-                        }
-                        tempList
-                    }
+//                    17 -> {
+//                        for (data in a_schedule) {
+//                            if (data.days == "27"||data.days == "d28") {
+//                                tempList.add(data)
+//                            }
+//                        }
+//                        tempList
+//                    }
 //
 //                    18 -> {
 //                        for (data in Utils.a_schedule) {
@@ -870,7 +876,7 @@ d("DATA",list.toString())
 
                     else -> {
                         for (data in Utils.a_schedule) {
-                            if (data.days == "d20") {
+                            if (data.days == "d29"||data.days == "d30") {
                                 tempList.add(data)
                             }
                         }
